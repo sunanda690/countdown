@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="UTF-8" />
+	<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+	<link rel="shortcut icon" type="image/jpg" href="logo.jpg">
+	<title style="text-decoration-color: white">Here You go</title>
+	<style type="text/css">
+		body {
+ 			 background-image: url('background.jpg');
+ 			 background-repeat: no-repeat;
+			 background-attachment: fixed;
+			 background-size: cover;
+			 font-family: Arial, Helvetica, sans-serif;
+			 z-index: -2;
+		}
+		#howmany{
+			position: absolute;
+			/*background-color: orange;*/
+			padding: 10px 10%;
+			z-index: 12;
+		}
+		#day{
+			color: white ;
+			font-size: 50px;
+			text-shadow: 4px 4px 4px #46A049;
+
+		}
+		#goTOcount{
+			position: absolute;
+			margin-top: 58vh;
+			margin-left: 65%;
+			padding: 0 10px;
+			transform: skew(5deg);
+		  	background-color: #f0d792;
+		  	box-shadow: 5px 10px 18px #888888;
+  			border-radius: 5px;
+  			z-index: 11;
+		}
+		button {
+			font-size: 1.2rem;
+			font-weight: bold;
+			margin-top: 10%;
+			margin-left: 50%;
+			transform: translate(-50%,-50%);
+
+			padding: 10px ;
+			border: 5px solid white;
+			cursor: pointer;
+			border-radius: 10px;
+			background-color: #46A049;
+
+		}
+		a:link {
+  			color: white;
+  			text-decoration: none;
+		}
+		a:visited{
+			color: white;
+  			text-decoration: none;
+		}
+		a:hover {
+  			color: black;
+  			background-color: transparent;
+ 			text-decoration: underline;
+		}
+		#logo{
+			position: relative;
+			float: left;
+			padding-top: 5px;
+		}
+		#nav{
+			position: relative;
+			float: right;
+
+		}
+	</style>
+</head>
+
+<body>
+	<!-- <h1 style="color: white">Here you are....</h1> -->
+	<div id="howmany">
+		<h1 id="day" ></h1>
+	</div>
+	
+	<div id="goTOcount">
+		<div id="logo">
+			<img src="watch.jpg" style=" width:50px; height:50px; border-radius: 50% ;margin-top: 10px">
+		</div>
+		<div id="nav">
+			<h1 style="color: white; -webkit-text-stroke: 1px black;" >Countdown Timer</h1>	
+		</div>
+		<div>
+			<button>
+				<a href="countdown.html">Click Here</a>
+			</button>
+		</div>
+		
+	</div>
+	
+
+	<script>
+		var countDownDate = new Date("July 20, 2020").getTime();
+
+		var update = setInterval(function() {
+  			var now = new Date().getTime();
+  			var remaining = countDownDate - now;
+  
+  			var days = Math.floor(remaining / (1000 * 60 * 60 * 24));
+	  		// days = (days<0)? 0 : days;
+  			document.getElementById("day").innerHTML =  days + " days to go...";
+   		}, 1000);
+   	</script>
+</body>
+</html>

@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8" />
+	<meta http-equiv="Content-type" content="text/html; charset=utf-8" />
+	<meta name="viewport" content="width=device-width, initial-scale=1" />
+	<title>20th July COUNTDOWN</title>
+	<link rel="shortcut icon" type="image/jpg" href="logo.jpg">
+	<link rel="stylesheet" type="text/css" href="count.css">
+	
+</head>
+
+<body>
+
+	<p id="heading" >The Remaining Time</p>
+	<div class="countContainer">
+		<div class="horizontal">
+			<p id="d" class="digit">	</p>
+			<p class="label">Days</p>
+		</div>
+		<div class="horizontal">
+			<p id="h" class="digit">	</p>
+			<p class="label">Hours</p>
+		</div>
+		<div class="horizontal">
+			<p id="m" class="digit">	</p>
+			<p class="label">Minutes</p>
+		</div>
+		<div class="horizontal">
+			<p id="s" class="digit">	</p>
+			<p class="label">Seconds</p>
+		</div>
+	</div>
+	<<!-- table class="countContainer">
+		<tr id="highlight">
+			<td id="d"></td>
+			<td id="h"></td>
+			<td id="m"></td>
+			<td id="s"></td>
+		</tr>
+		<tr>
+			<td>Days</td>
+			<td>Hours</td>
+			<td>Minutes</td>
+			<td>Seconds</td>
+		</tr>
+	</table> -->
+
+
+	<script>
+		var countDownDate = new Date("July 20, 2020").getTime();
+
+		var update = setInterval(function() {
+  			var now = new Date().getTime();
+		  	var remaining = countDownDate - now;
+  
+  			var days = Math.floor(remaining / (1000 * 60 * 60 * 24));
+  			var hours = Math.floor((remaining % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+  			var minutes = Math.floor((remaining % (1000 * 60 * 60)) / (1000 * 60));
+  			var seconds = Math.floor((remaining % (1000 * 60)) / 1000);
+    
+   			hours= (hours<10)? "0"+ hours : hours;
+   			minutes= (minutes<10)? "0"+ minutes : minutes;
+   			seconds= (seconds<10)? "0"+ seconds : seconds;
+
+   			document.getElementById("d").innerHTML =  days;
+		    document.getElementById("h").innerHTML =  hours;
+			document.getElementById("m").innerHTML =  minutes;
+		    document.getElementById("s").innerHTML =  seconds;
+   
+			if (remaining < 0) {
+    			clearInterval(update);
+    			document.getElementById("tim").innerHTML = "TIMER EXPIRED!! You have Reached Your Goal";
+ 			 }
+		}, 1000);
+	</script>
+
+</body>
+</html>

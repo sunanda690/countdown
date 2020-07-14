@@ -37,7 +37,6 @@ body{
 	/*border: 5px green solid;*/
 	color: white;
 	font-style: bold;
-	/*font-size: 20px;*/
 }
 .horizontal{
 	position: relative;
@@ -46,6 +45,16 @@ body{
 	width: 20%;
 	margin-left: 4%;
 	margin-top: 2%;
+}
+@media screen and (max-width: 500px){
+	.countCotainer{
+		width: 94%;
+		left: 3%;
+	}
+	.horizontal{
+		margin-left: 2%;
+		width: 22%;
+	}
 }
 .digit{
 	font-weight: bold;
